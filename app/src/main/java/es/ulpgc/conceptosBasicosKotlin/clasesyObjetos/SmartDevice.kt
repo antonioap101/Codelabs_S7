@@ -1,6 +1,12 @@
 package es.ulpgc.conceptosBasicosKotlin.clasesyObjetos
 
-open class SmartDevice(val name: String , val category: String) {
+internal open class SmartDevice protected constructor(val name: String , val category: String) {
+
+    var deviceStatus: String = "offline"
+        protected set
+
+
+    open val deviceType = "unknown"
 
     constructor(name: String, category: String, statusCode: Int) : this(name, category) {
         var deviceStatus = when(statusCode){
@@ -10,19 +16,20 @@ open class SmartDevice(val name: String , val category: String) {
         }
     }
 
-    fun turnOn(){
-        println("Smart device is turned on")
+    open fun turnOn(){
+        // cuerpo de la función
     }
-    fun turnOff(){
-        println("Smart device is turned off")
+    open fun turnOff(){
+        // cuerpo de la función
     }
 
 }
 
 
 fun main(){
-    val smartTvDevice = SmartDevice(name="Android TV", category = "Entertainment")
-    println("Device name is: ${smartTvDevice.name}")
-    smartTvDevice.turnOn()
-    smartTvDevice.turnOff()
+    //val smartTvDevice = SmartDevice(name="Android TV", category = "Entertainment")
+    val smartDevice: SmartDevice = SmartTvDevice("Android TV", "Entertainment")
+    println("Device name is: ${smartDevice.name}")
+    smartDevice.turnOn()
+    smartDevice.turnOff()
 }

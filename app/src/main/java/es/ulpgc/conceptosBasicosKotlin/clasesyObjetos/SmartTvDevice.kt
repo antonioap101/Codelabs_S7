@@ -3,6 +3,9 @@ package es.ulpgc.conceptosBasicosKotlin.clasesyObjetos
 // Smart TV IS-A smart device.
 class SmartTvDevice(deviceName: String, deviceCategory: String):
     SmartDevice(name = deviceName, category = deviceCategory){
+
+    override val deviceType = "Smart TV"
+
     private var speakerVolume = 2
         set(value) { field = if (value in 1..100) value else field }
     private var channelNumber = 1
@@ -27,5 +30,20 @@ class SmartTvDevice(deviceName: String, deviceCategory: String):
         channelNumber--
         println("Channel number decreased to $channelNumber")
     }
+
+    override fun turnOn() {
+        deviceStatus = "online"
+        println(
+            "$name is turned on. Speaker volume is set to $speakerVolume and channel number is " +
+                    "set to $channelNumber."
+        )
+    }
+
+    override fun turnOff() {
+        deviceStatus = "offline"
+        println("$name turned off")
+    }
+
+
 
 }
