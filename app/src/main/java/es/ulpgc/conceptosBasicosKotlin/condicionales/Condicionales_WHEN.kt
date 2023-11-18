@@ -1,4 +1,4 @@
-package es.ulpgc.conceptosBasicosKotlin
+package es.ulpgc.conceptosBasicosKotlin.condicionales
 
 fun trafficLightColors2(trafficLightColor: String){
     when (trafficLightColor) {
