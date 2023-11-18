@@ -6,10 +6,9 @@ class SmartTvDevice(deviceName: String, deviceCategory: String):
 
     override val deviceType = "Smart TV"
 
-    private var speakerVolume = 2
-        set(value) { field = if (value in 1..100) value else field }
-    private var channelNumber = 1
-        set(value) { field = if (value in 0..200) value else field }
+    private var speakerVolume by RangeCalculator(initialValue = 2, minValue = 0, maxValue = 100)
+
+    private var channelNumber by RangeCalculator(initialValue = 1, minValue = 0, maxValue = 200)
 
     fun increaseSpeakerVolume(){
         speakerVolume++

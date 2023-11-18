@@ -1,6 +1,6 @@
 package es.ulpgc.conceptosBasicosKotlin.clasesyObjetos
 
-internal open class SmartDevice protected constructor(val name: String , val category: String) {
+open class SmartDevice protected constructor(val name: String , val category: String) {
 
     var deviceStatus: String = "offline"
         protected set
@@ -26,10 +26,3 @@ internal open class SmartDevice protected constructor(val name: String , val cat
 }
 
 
-fun main(){
-    //val smartTvDevice = SmartDevice(name="Android TV", category = "Entertainment")
-    val smartDevice: SmartDevice = SmartTvDevice("Android TV", "Entertainment")
-    println("Device name is: ${smartDevice.name}")
-    smartDevice.turnOn()
-    smartDevice.turnOff()
-}
