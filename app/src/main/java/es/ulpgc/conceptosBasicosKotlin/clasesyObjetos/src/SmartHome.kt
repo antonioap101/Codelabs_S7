@@ -1,4 +1,4 @@
-package es.ulpgc.conceptosBasicosKotlin.clasesyObjetos
+package es.ulpgc.conceptosBasicosKotlin.clasesyObjetos.src
 
 // The SmartHome class HAS-A smart TV device and smart light.
 class SmartHome(
@@ -21,15 +21,19 @@ class SmartHome(
     }
 
     fun increaseTvVolume() {
-        smartTvDevice.increaseSpeakerVolume()
+        if (smartTvDevice.deviceStatus == "on") smartTvDevice.increaseSpeakerVolume()
+    }
+
+    fun decreaseTvVolume() {
+        if (smartTvDevice.deviceStatus == "on") smartTvDevice.decreaseSpeakerVolume()
     }
 
     fun changeTvChannelToNext() {
-        smartTvDevice.nextChannel()
+        if (smartTvDevice.deviceStatus == "on") smartTvDevice.nextChannel()
     }
 
     fun changeTvChannelToPrevious() {
-        smartTvDevice.previousChannel()
+        if (smartTvDevice.deviceStatus == "on") smartTvDevice.previousChannel()
     }
 
     fun turnOnLight() {
@@ -43,12 +47,13 @@ class SmartHome(
     }
 
     fun increaseLightBrightness() {
-        smartLightDevice.increaseBrightness()
+        if (smartLightDevice.deviceStatus == "on") smartLightDevice.increaseBrightness()
     }
 
     fun decreaseLightBrightness() {
-        smartLightDevice.decreaseBrightness()
+        if (smartLightDevice.deviceStatus == "on") smartLightDevice.decreaseBrightness()
     }
+
 
     fun turnOnAllDevices() {
         turnOnTv()
@@ -59,4 +64,13 @@ class SmartHome(
         turnOffTv()
         turnOffLight()
     }
+
+    fun printSmartTvInfo(){
+        smartTvDevice.printDeviceInfo()
+    }
+
+    fun printLightInfo(){
+        smartLightDevice.printDeviceInfo()
+    }
+
 }

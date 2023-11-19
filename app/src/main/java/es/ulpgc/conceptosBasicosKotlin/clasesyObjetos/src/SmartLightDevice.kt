@@ -1,4 +1,4 @@
-package es.ulpgc.conceptosBasicosKotlin.clasesyObjetos
+package es.ulpgc.conceptosBasicosKotlin.clasesyObjetos.src
 
 // Smart Light Device IS-A smart device.
 class SmartLightDevice(deviceName: String, deviceCategory: String):
@@ -6,7 +6,8 @@ class SmartLightDevice(deviceName: String, deviceCategory: String):
 
     override val deviceType = "Smart Light"
 
-    private var brightnessLevel by RangeCalculator(initialValue = 0, minValue = 0, maxValue = 100)
+    var brightnessLevel by RangeCalculator(initialValue = 0, minValue = 0, maxValue = 100)
+    private set
 
     fun increaseBrightness(){
         brightnessLevel++

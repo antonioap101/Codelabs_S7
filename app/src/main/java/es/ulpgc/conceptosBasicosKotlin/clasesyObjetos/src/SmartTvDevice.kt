@@ -1,4 +1,4 @@
-package es.ulpgc.conceptosBasicosKotlin.clasesyObjetos
+package es.ulpgc.conceptosBasicosKotlin.clasesyObjetos.src
 
 // Smart TV IS-A smart device.
 class SmartTvDevice(deviceName: String, deviceCategory: String):
@@ -6,9 +6,11 @@ class SmartTvDevice(deviceName: String, deviceCategory: String):
 
     override val deviceType = "Smart TV"
 
-    private var speakerVolume by RangeCalculator(initialValue = 2, minValue = 0, maxValue = 100)
+    var speakerVolume by RangeCalculator(initialValue = 2, minValue = 0, maxValue = 100)
+        private set
 
-    private var channelNumber by RangeCalculator(initialValue = 1, minValue = 0, maxValue = 200)
+    var channelNumber by RangeCalculator(initialValue = 1, minValue = 0, maxValue = 200)
+        private set
 
     fun increaseSpeakerVolume(){
         speakerVolume++
@@ -31,7 +33,7 @@ class SmartTvDevice(deviceName: String, deviceCategory: String):
     }
 
     override fun turnOn() {
-        deviceStatus = "online"
+        super.turnOn()
         println(
             "$name is turned on. Speaker volume is set to $speakerVolume and channel number is " +
                     "set to $channelNumber."
@@ -39,10 +41,8 @@ class SmartTvDevice(deviceName: String, deviceCategory: String):
     }
 
     override fun turnOff() {
-        deviceStatus = "offline"
+        super.turnOff()
         println("$name turned off")
     }
-
-
 
 }

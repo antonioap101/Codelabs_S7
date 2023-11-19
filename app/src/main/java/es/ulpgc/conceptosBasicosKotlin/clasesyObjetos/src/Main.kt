@@ -1,4 +1,4 @@
-package es.ulpgc.conceptosBasicosKotlin.clasesyObjetos
+package es.ulpgc.conceptosBasicosKotlin.clasesyObjetos.src
 
 fun main() {
     // Crear instancias de SmartTvDevice y SmartLightDevice

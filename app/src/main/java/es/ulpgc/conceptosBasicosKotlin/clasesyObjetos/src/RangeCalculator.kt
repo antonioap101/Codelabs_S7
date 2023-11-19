@@ -1,4 +1,4 @@
-package es.ulpgc.conceptosBasicosKotlin.clasesyObjetos
+package es.ulpgc.conceptosBasicosKotlin.clasesyObjetos.src
 
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
