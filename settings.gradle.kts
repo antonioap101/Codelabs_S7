@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Codelabs_S7"
 include(":app")
+include(":diceroller")
