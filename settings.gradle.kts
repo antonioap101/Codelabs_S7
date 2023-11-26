@@ -14,4 +14,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Codelabs_S7"
-include(":diceroller")
+include(":ArtSpaceApp")
